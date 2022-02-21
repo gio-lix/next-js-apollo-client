@@ -13,7 +13,6 @@ export const totalPrice = (data:DataType[] ) => {
 }
 
 export const addOrderList = (data: DataType, initialValue: DefaultSizeType, price: number) =>{
-
     const orderCart = {
         id: data?.id,
         brand: data?.brand,

@@ -1,7 +1,9 @@
 import {createContext, useReducer} from "react";
 import {Reducers} from "./reducers/reducers";
 
-export const createStore = createContext<any>(null)
+
+
+export const createStore = createContext<any | null>(null)
 
 const initialState: {cart: {}[], currency: string[]} = {
     currency: null,

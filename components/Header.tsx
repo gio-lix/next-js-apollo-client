@@ -69,7 +69,12 @@ const Header = () => {
     }
     return (
         <header className='relative h-[80px]  flex  items-center'>
-            {error || isError && (
+            {(loading || isLoading) && (
+                <div className='h-screen flex items-center justify-center'>
+                    <h1>Loading...</h1>
+                </div>
+            )}
+            { error || isError && (
                 <div className='flex justify-center items-center '>
                     <h4 className='text-red-600 font-bold text-3xl'>Error</h4>
                 </div>

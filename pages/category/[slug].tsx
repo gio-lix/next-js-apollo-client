@@ -34,11 +34,6 @@ const CategoriesPage: NextPage = () => {
 
     return (
         <Layout >
-            {error && (
-                <div className='flex justify-center items-center '>
-                    <h4 className='text-red-600 font-bold text-3xl'>Error</h4>
-                </div>
-            )}
             {loading && (
                 <div className='h-screen flex items-center justify-center'>
                     <h1>Loading...</h1>
@@ -76,6 +71,11 @@ const CategoriesPage: NextPage = () => {
                     )
                 })}
             </section>
+            {error && (
+                <div className='flex justify-center items-center '>
+                    <h4 className='text-red-600 font-bold text-3xl'>Error</h4>
+                </div>
+            )}
         </Layout>
     )
 }

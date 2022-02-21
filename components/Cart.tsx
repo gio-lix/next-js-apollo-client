@@ -1,4 +1,4 @@
-import {FC,  useContext, useEffect, useState} from "react"
+import { useContext, useEffect, useState} from "react"
 import {createStore} from "../context/storeProvider";
 import left from '../public/left_icon.svg'
 import Image from "next/image";
@@ -19,7 +19,6 @@ const Cart = () => {
         setTakeSize(state?.cart)
     }, [state]);
 
-    console.log('takeSize', takeSize)
 
     const handlerUpdateCartValue = (id: string, name: string, value: string) => {
         dispatch({type: "CART_UPDATE_VALUE", payload: {id, name, value}})

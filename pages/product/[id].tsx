@@ -1,4 +1,4 @@
-import {FC, useContext, useEffect, useState} from "react"
+import { useContext, useEffect, useState} from "react"
 import Layout from "../../components/Layout";
 import {useQuery} from "@apollo/client";
 import {GET_PRODUCTS_BY_ID} from "../../lib/queries";
@@ -59,17 +59,11 @@ const ProductDetails: NextPage = () => {
 
     return (
         <Layout title={data?.product?.brand}>
-            {error && (
-                <div className='flex justify-center items-center '>
-                    <h4 className='text-red-600 font-bold text-3xl'>Error</h4>
-                </div>
-            )}
             {loading && (
                 <div className='h-screen flex items-center justify-center'>
                     <h1>Loading...</h1>
                 </div>
             )}
-
             <div className='flex items-start mt-[80px]  '>
                 <div className='flex  '>
                     <section className='flex flex-col '>
@@ -90,6 +84,7 @@ const ProductDetails: NextPage = () => {
                         )}
                     </div>
                 </div>
+
                 <div className='h-full ml-[100px] '>
                     <div className='font-raleway'>
                         <h5 className='font-semibold text-3xl'>{data?.product?.brand}</h5>
@@ -127,11 +122,13 @@ const ProductDetails: NextPage = () => {
                                 })}
                             </div>
                         </div>
+
+
                         <div>
                             <h4 className='font-roboto_condensed font-bold text-lg	mt-10'>price</h4>
-                            <span
-                                className='font-bold font-raleway text-2xl mt-2.5'>${data?.product?.prices[0]?.amount} </span>
+                            <span  className='font-bold font-raleway text-2xl mt-2.5'>${data?.product?.prices[0]?.amount} </span>
                         </div>
+
                         <button onClick={handleClickCart} className='w-[292px] h-[52px] bg-green mt-5'>
                             <p className='uppercase font-raleway font-semibold	text-base text-white '>add to cart</p>
                         </button>
@@ -143,6 +140,11 @@ const ProductDetails: NextPage = () => {
                     </div>
                 </div>
             </div>
+            {(error) && (
+                <div className='flex justify-center items-center '>
+                    <h4 className='text-red-600 font-bold text-3xl'>Error</h4>
+                </div>
+            )}
         </Layout>
     )
 }
